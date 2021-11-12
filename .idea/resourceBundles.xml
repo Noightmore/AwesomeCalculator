@@ -2,13 +2,5 @@
 <project version="4">
   <component name="ResourceBundleManager">
     <file url="file://$PROJECT_DIR$/src/main/resources/MessageBundle.properties" />
-    <file url="file://$PROJECT_DIR$/src/main/resources/MessageBundle_cz.properties" />
-    <file url="file://$PROJECT_DIR$/src/main/resources/MessageBundle_en.properties" />
-    <custom-resource-bundle>
-      <file value="file://$PROJECT_DIR$/src/main/resources/MessageBundle.properties" />
-      <file value="file://$PROJECT_DIR$/src/main/resources/MessageBundle_cz.properties" />
-      <file value="file://$PROJECT_DIR$/src/main/resources/MessageBundle_en.properties" />
-      <base-name>MessageBundle</base-name>
-    </custom-resource-bundle>
   </component>
 </project>
