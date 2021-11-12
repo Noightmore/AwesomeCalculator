@@ -1,10 +1,10 @@
 package main.java.AwesomeCalculator.views;
 
-import main.java.AwesomeCalculator.models.Calculator;
-import org.jetbrains.annotations.NotNull;
+import main.java.AwesomeCalculator.controllers.Controller;
+
 
 import javax.swing.*;
-import java.util.Objects;
+
 
 public class MainWindow extends JFrame {
     private JPanel mainPanel;
@@ -17,17 +17,16 @@ public class MainWindow extends JFrame {
     private JButton button9;
     private JButton button6;
     private JButton button3;
-    private JLabel mainLabel;
     private JButton buttonPlus;
-    private JButton buttonCalculate;
     private JButton buttonMinus;
     private JButton button0;
     private JButton buttonMultiply;
     private JButton buttonDivide;
     private JButton buttonDecimalPoint;
+    private JButton buttonCalculate;
+    private JLabel mainLabel;
 
-    String text = "";
-    Calculator calc;
+    Controller controller;
 
     public MainWindow(String title) {
         super(title);
@@ -36,51 +35,27 @@ public class MainWindow extends JFrame {
         this.pack();
         this.initialize();
 
-        button1.addActionListener(actionEvent -> read(button1));
-        button2.addActionListener(actionEvent -> read(button2));
-        button3.addActionListener(actionEvent -> read(button3));
-        button4.addActionListener(actionEvent -> read(button4));
-        button5.addActionListener(actionEvent -> read(button5));
-        button6.addActionListener(actionEvent -> read(button6));
-        button7.addActionListener(actionEvent -> read(button7));
-        button8.addActionListener(actionEvent -> read(button8));
-        button9.addActionListener(actionEvent -> read(button9));
-        button0.addActionListener(actionEvent -> read(button0));
-        buttonDecimalPoint.addActionListener(actionEvent -> read(buttonDecimalPoint));
+        button1.addActionListener(actionEvent -> controller.read(button1, mainLabel));
+        button2.addActionListener(actionEvent -> controller.read(button2, mainLabel));
+        button3.addActionListener(actionEvent -> controller.read(button3, mainLabel));
+        button4.addActionListener(actionEvent -> controller.read(button4,mainLabel));
+        button5.addActionListener(actionEvent -> controller.read(button5, mainLabel));
+        button6.addActionListener(actionEvent -> controller.read(button6, mainLabel));
+        button7.addActionListener(actionEvent -> controller.read(button7, mainLabel));
+        button8.addActionListener(actionEvent -> controller.read(button8, mainLabel));
+        button9.addActionListener(actionEvent -> controller.read(button9, mainLabel));
+        button0.addActionListener(actionEvent -> controller.read(button0,mainLabel));
+        buttonDecimalPoint.addActionListener(actionEvent -> controller.read(buttonDecimalPoint, mainLabel));
 
-        buttonPlus.addActionListener(actionEvent -> {
+        buttonPlus.addActionListener(actionEvent -> controller.process(buttonPlus,mainLabel));
+        buttonMinus.addActionListener(actionEvent -> controller.process(buttonMinus,mainLabel));
+        buttonMultiply.addActionListener(actionEvent -> controller.process(buttonMultiply,mainLabel));
+        buttonDivide.addActionListener(actionEvent -> controller.process(buttonDivide,mainLabel));
 
-        });
-        buttonMinus.addActionListener(actionEvent -> {
-
-        });
-        buttonMultiply.addActionListener(actionEvent -> {
-
-        });
-        buttonDivide.addActionListener(actionEvent -> {
-
-        });
-
+        buttonCalculate.addActionListener(actionEvent -> controller.showResults(mainLabel));
     }
 
     private void initialize(){
-        calc = new Calculator(0, "x");
+        controller = new Controller();
     }
-    private void read(@NotNull JButton b){
-        text = mainLabel.getText();
-        mainLabel.setText(
-                text += b.getText()
-        );
-    }
-
-    private void process(@NotNull JButton b){
-        calc.setNumberToProcess(
-                Double.parseDouble(mainLabel.getText())
-        );
-        // TODO: mathematical operations
-        calc.setOperation(b.getText());
-
-
-    }
-
 }
