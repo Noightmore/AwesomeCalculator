@@ -25,6 +25,7 @@ public class MainWindow extends JFrame {
     private JButton buttonDecimalPoint;
     private JButton buttonCalculate;
     private JLabel mainLabel;
+    private JButton buttonClearAll;
 
     Controller controller;
 
@@ -35,24 +36,25 @@ public class MainWindow extends JFrame {
         this.pack();
         this.initialize();
 
-        button1.addActionListener(actionEvent -> controller.read(button1, mainLabel));
-        button2.addActionListener(actionEvent -> controller.read(button2, mainLabel));
-        button3.addActionListener(actionEvent -> controller.read(button3, mainLabel));
-        button4.addActionListener(actionEvent -> controller.read(button4,mainLabel));
-        button5.addActionListener(actionEvent -> controller.read(button5, mainLabel));
-        button6.addActionListener(actionEvent -> controller.read(button6, mainLabel));
-        button7.addActionListener(actionEvent -> controller.read(button7, mainLabel));
-        button8.addActionListener(actionEvent -> controller.read(button8, mainLabel));
-        button9.addActionListener(actionEvent -> controller.read(button9, mainLabel));
-        button0.addActionListener(actionEvent -> controller.read(button0,mainLabel));
-        buttonDecimalPoint.addActionListener(actionEvent -> controller.read(buttonDecimalPoint, mainLabel));
+        button1.addActionListener(actionEvent -> controller.readInput(button1, mainLabel));
+        button2.addActionListener(actionEvent -> controller.readInput(button2, mainLabel));
+        button3.addActionListener(actionEvent -> controller.readInput(button3, mainLabel));
+        button4.addActionListener(actionEvent -> controller.readInput(button4,mainLabel));
+        button5.addActionListener(actionEvent -> controller.readInput(button5, mainLabel));
+        button6.addActionListener(actionEvent -> controller.readInput(button6, mainLabel));
+        button7.addActionListener(actionEvent -> controller.readInput(button7, mainLabel));
+        button8.addActionListener(actionEvent -> controller.readInput(button8, mainLabel));
+        button9.addActionListener(actionEvent -> controller.readInput(button9, mainLabel));
+        button0.addActionListener(actionEvent -> controller.readInput(button0,mainLabel));
+        buttonDecimalPoint.addActionListener(actionEvent -> controller.readInput(buttonDecimalPoint, mainLabel));
 
-        buttonPlus.addActionListener(actionEvent -> controller.process(buttonPlus,mainLabel));
-        buttonMinus.addActionListener(actionEvent -> controller.process(buttonMinus,mainLabel));
-        buttonMultiply.addActionListener(actionEvent -> controller.process(buttonMultiply,mainLabel));
-        buttonDivide.addActionListener(actionEvent -> controller.process(buttonDivide,mainLabel));
+        buttonPlus.addActionListener(actionEvent -> controller.processTheNumbers(buttonPlus,mainLabel));
+        buttonMinus.addActionListener(actionEvent -> controller.processTheNumbers(buttonMinus,mainLabel));
+        buttonMultiply.addActionListener(actionEvent -> controller.processTheNumbers(buttonMultiply,mainLabel));
+        buttonDivide.addActionListener(actionEvent -> controller.processTheNumbers(buttonDivide,mainLabel));
 
         buttonCalculate.addActionListener(actionEvent -> controller.showResults(mainLabel));
+        buttonClearAll.addActionListener(actionEvent -> controller.clearAll(mainLabel));
     }
 
     private void initialize(){

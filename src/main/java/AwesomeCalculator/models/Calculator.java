@@ -1,16 +1,14 @@
 package main.java.AwesomeCalculator.models;
 
-import org.jetbrains.annotations.NotNull;
-
 public class Calculator {
 
     private double numberToProcess;
-    private String operation;
+    private char operation;
 
-    public String getOperation() {
+    public char getOperation() {
         return operation;
     }
-    public void setOperation(String operation){
+    public void setOperation(char operation){
         this.operation = operation;
     }
 
@@ -21,21 +19,28 @@ public class Calculator {
         this.numberToProcess = numberToProcess;
     }
 
-    public Calculator(double numberToProcess, String operation) {
+    public Calculator(double numberToProcess, char operation) {
         this.numberToProcess = numberToProcess;
         this.operation = operation;
     }
 
+    // all fails in here
     public void calculate(double num){
         switch (operation){
-            case "+":
-                numberToProcess += num;
-            case "-":
-                numberToProcess -= num;
-            case "*":
-                numberToProcess *= num;
-            case "/":
-                numberToProcess /= num;
+            case '+':
+                this.numberToProcess += num;
+                break;
+            case '-':
+                this.numberToProcess -= num;
+                break;
+            case '*':
+                this.numberToProcess *= num;
+                break;
+            case '/':
+                this.numberToProcess /= num;
+                break;
+            default:
+                throw new IllegalStateException("Unexpected value: " + operation);
         }
     }
 }
