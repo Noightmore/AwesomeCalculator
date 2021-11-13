@@ -24,11 +24,15 @@ public class Calculator {
         this.operation = operation;
     }
 
+    // TODO: resolve schizophrenic issues regarding calculations
     // all fails in here
     public void calculate(double num){
+        System.out.println("methods been called");
         switch (operation){
             case '+':
                 this.numberToProcess += num;
+                System.out.println(this.numberToProcess);
+                System.out.println(num);
                 break;
             case '-':
                 this.numberToProcess -= num;

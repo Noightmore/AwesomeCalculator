@@ -4,6 +4,8 @@ import main.java.AwesomeCalculator.controllers.Controller;
 
 
 import javax.swing.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 
 public class MainWindow extends JFrame {
@@ -26,6 +28,7 @@ public class MainWindow extends JFrame {
     private JButton buttonCalculate;
     private JLabel mainLabel;
     private JButton buttonClearAll;
+    private JButton buttonClearLastCharacter;
 
     Controller controller;
 
@@ -55,6 +58,9 @@ public class MainWindow extends JFrame {
 
         buttonCalculate.addActionListener(actionEvent -> controller.showResults(mainLabel));
         buttonClearAll.addActionListener(actionEvent -> controller.clearAll(mainLabel));
+        buttonClearLastCharacter.addActionListener(actionEvent -> {
+                // TODO implement deletion of the last character in mainLabel
+        });
     }
 
     private void initialize(){

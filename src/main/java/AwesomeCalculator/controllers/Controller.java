@@ -4,8 +4,9 @@ import main.java.AwesomeCalculator.models.Calculator;
 import org.jetbrains.annotations.NotNull;
 
 import javax.swing.*;
+import java.lang.annotation.Annotation;
 
-public class Controller {
+public class Controller implements IController{
 
     private Calculator calc;
 
@@ -21,6 +22,7 @@ public class Controller {
 
     public void processTheNumbers(@NotNull JButton b, @NotNull JLabel label){
         if(calc.getOperation() != 'x'){
+            System.out.println("Method has been called in controller");
             calc.calculate(Double.parseDouble(label.getText()));
             label.setText("");
         }
@@ -36,6 +38,7 @@ public class Controller {
     }
 
     public void showResults(@NotNull JLabel label){
+        calc.calculate(Double.parseDouble(label.getText()));
         label.setText(String.format("%f", calc.getNumberToProcess()));
     }
 
@@ -46,5 +49,10 @@ public class Controller {
 
     private void initialize(){
         calc = new Calculator(0, 'x');
+    }
+
+    @Override
+    public Class<? extends Annotation> annotationType() {
+        return null;
     }
 }
