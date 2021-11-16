@@ -4,6 +4,10 @@ import javax.swing.*;
 
 public interface IController {
 
+    /*
+     * documentation done in ASP .NET style
+     */
+
     /**
      * when button is clicked, this method reads its name (integer)
      * and adds it to the displayed number
@@ -44,6 +48,15 @@ public interface IController {
      * @param operatorLabel is cleared in the process
      */
     void clearAll(JLabel leftLabel, JLabel operatorLabel, JLabel rightLabel);
+
+    /**
+     * method that clears the last entered character depending on which label is not empty
+     *
+     * @param leftLabel label which could be changed in the process (is checked as last)
+     * @param rightLabel label which could be changed in the process (is checked as first)
+     * @param operatorLabel label which could be changed in the process (is checked as second)
+     */
+    void clearOneCharacter(JLabel leftLabel, JLabel operatorLabel, JLabel rightLabel);
 
     /**
      * method that checks whether has been set (+,-,*,/) is not x (the default value)
