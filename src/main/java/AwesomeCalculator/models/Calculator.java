@@ -2,7 +2,7 @@ package main.java.AwesomeCalculator.models;
 
 public class Calculator {
 
-    private double numberToProcess;
+    private double value;
     private char operation;
 
     public char getOperation() {
@@ -12,36 +12,31 @@ public class Calculator {
         this.operation = operation;
     }
 
-    public double getNumberToProcess() {
-        return numberToProcess;
+    public double getValue() {
+        return value;
     }
-    public void setNumberToProcess(double numberToProcess) {
-        this.numberToProcess = numberToProcess;
+    public void setValue(double value) {
+        this.value = value;
     }
 
-    public Calculator(double numberToProcess, char operation) {
-        this.numberToProcess = numberToProcess;
+    public Calculator(double value, char operation) {
+        this.value = value;
         this.operation = operation;
     }
 
-    // TODO: resolve schizophrenic issues regarding calculations
-    // all fails in here
     public void calculate(double num){
-        System.out.println("methods been called");
         switch (operation){
             case '+':
-                this.numberToProcess += num;
-                System.out.println(this.numberToProcess);
-                System.out.println(num);
+                this.value += num;
                 break;
             case '-':
-                this.numberToProcess -= num;
+                this.value -= num;
                 break;
             case '*':
-                this.numberToProcess *= num;
+                this.value *= num;
                 break;
             case '/':
-                this.numberToProcess /= num;
+                this.value /= num;
                 break;
             default:
                 throw new IllegalStateException("Unexpected value: " + operation);

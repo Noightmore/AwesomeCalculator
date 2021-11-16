@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="main.java.AwesomeCalculator.views.MainWindow">
-  <grid id="27dc6" binding="mainPanel" layout-manager="GridLayoutManager" row-count="7" column-count="6" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+  <grid id="27dc6" binding="mainPanel" layout-manager="GridLayoutManager" row-count="6" column-count="7" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
     <margin top="0" left="0" bottom="0" right="0"/>
     <constraints>
       <xy x="20" y="20" width="652" height="827"/>
@@ -8,17 +8,9 @@
     <properties/>
     <border type="none"/>
     <children>
-      <component id="eef1c" class="javax.swing.JLabel" binding="mainLabel">
-        <constraints>
-          <grid row="0" column="0" row-span="3" col-span="4" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
-        </constraints>
-        <properties>
-          <text resource-bundle="main/resources/MessageBundle" key="mainLabelsWelcomeMessage"/>
-        </properties>
-      </component>
       <component id="65d12" class="javax.swing.JButton" binding="button1">
         <constraints>
-          <grid row="5" column="0" row-span="2" col-span="2" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+          <grid row="4" column="0" row-span="2" col-span="2" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
           <text resource-bundle="main/resources/MessageBundle" key="oneButton"/>
@@ -26,7 +18,7 @@
       </component>
       <component id="6c66" class="javax.swing.JButton" binding="button4">
         <constraints>
-          <grid row="4" column="0" row-span="1" col-span="2" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+          <grid row="3" column="0" row-span="1" col-span="2" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
           <text resource-bundle="main/resources/MessageBundle" key="fourButton"/>
@@ -34,7 +26,7 @@
       </component>
       <component id="de6cd" class="javax.swing.JButton" binding="button7">
         <constraints>
-          <grid row="3" column="0" row-span="1" col-span="2" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+          <grid row="2" column="0" row-span="1" col-span="2" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
           <text resource-bundle="main/resources/MessageBundle" key="sevenButton"/>
@@ -42,7 +34,7 @@
       </component>
       <component id="ad65d" class="javax.swing.JButton" binding="button2">
         <constraints>
-          <grid row="5" column="2" row-span="2" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+          <grid row="4" column="2" row-span="2" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
           <text resource-bundle="main/resources/MessageBundle" key="twoButton"/>
@@ -50,7 +42,7 @@
       </component>
       <component id="f01a7" class="javax.swing.JButton" binding="button5">
         <constraints>
-          <grid row="4" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+          <grid row="3" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
           <text resource-bundle="main/resources/MessageBundle" key="fiveButton"/>
@@ -58,7 +50,7 @@
       </component>
       <component id="7882c" class="javax.swing.JButton" binding="button8">
         <constraints>
-          <grid row="3" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+          <grid row="2" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
           <text resource-bundle="main/resources/MessageBundle" key="eightButton"/>
@@ -66,7 +58,7 @@
       </component>
       <component id="1d76e" class="javax.swing.JButton" binding="button9">
         <constraints>
-          <grid row="3" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+          <grid row="2" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
           <text resource-bundle="main/resources/MessageBundle" key="nineButton"/>
@@ -74,7 +66,7 @@
       </component>
       <component id="47f3b" class="javax.swing.JButton" binding="button6">
         <constraints>
-          <grid row="4" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+          <grid row="3" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
           <text resource-bundle="main/resources/MessageBundle" key="sixButton"/>
@@ -82,7 +74,7 @@
       </component>
       <component id="1e696" class="javax.swing.JButton" binding="button3">
         <constraints>
-          <grid row="5" column="3" row-span="2" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+          <grid row="4" column="3" row-span="2" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
           <text resource-bundle="main/resources/MessageBundle" key="threeButton"/>
@@ -90,7 +82,7 @@
       </component>
       <component id="41b99" class="javax.swing.JButton" binding="buttonMultiply">
         <constraints>
-          <grid row="3" column="5" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+          <grid row="2" column="5" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
           <text resource-bundle="main/resources/MessageBundle" key="multiplyButton"/>
@@ -98,7 +90,7 @@
       </component>
       <component id="ac65" class="javax.swing.JButton" binding="buttonPlus">
         <constraints>
-          <grid row="3" column="4" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+          <grid row="2" column="4" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
           <text resource-bundle="main/resources/MessageBundle" key="plusButton"/>
@@ -106,7 +98,7 @@
       </component>
       <component id="11c0a" class="javax.swing.JButton" binding="buttonMinus">
         <constraints>
-          <grid row="4" column="4" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+          <grid row="3" column="4" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
           <text resource-bundle="main/resources/MessageBundle" key="minusButton"/>
@@ -114,7 +106,7 @@
       </component>
       <component id="b8f80" class="javax.swing.JButton" binding="buttonDivide">
         <constraints>
-          <grid row="4" column="5" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+          <grid row="3" column="5" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
           <text resource-bundle="main/resources/MessageBundle" key="divideButton"/>
@@ -122,7 +114,7 @@
       </component>
       <component id="29cce" class="javax.swing.JButton" binding="buttonDecimalPoint">
         <constraints>
-          <grid row="5" column="4" row-span="2" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+          <grid row="4" column="4" row-span="2" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
           <text resource-bundle="main/resources/MessageBundle" key="decimalPointButton"/>
@@ -130,31 +122,56 @@
       </component>
       <component id="62631" class="javax.swing.JButton" binding="button0">
         <constraints>
-          <grid row="5" column="5" row-span="2" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+          <grid row="4" column="5" row-span="2" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
           <text resource-bundle="main/resources/MessageBundle" key="zeroButton"/>
         </properties>
       </component>
-      <component id="58320" class="javax.swing.JButton" binding="buttonCalculate">
+      <component id="e3c0e" class="javax.swing.JLabel" binding="leftLabel">
         <constraints>
-          <grid row="0" column="4" row-span="3" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+          <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
-          <text resource-bundle="main/resources/MessageBundle" key="calculateButton"/>
+          <text resource-bundle="main/resources/MessageBundle" key="leftLabelText"/>
+        </properties>
+      </component>
+      <component id="eef1c" class="javax.swing.JLabel" binding="operatorLabel">
+        <constraints>
+          <grid row="1" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text resource-bundle="main/resources/MessageBundle" key="operatorLabelText"/>
+          <toolTipText value=""/>
+        </properties>
+      </component>
+      <component id="4ec1b" class="javax.swing.JLabel" binding="rightLabel">
+        <constraints>
+          <grid row="1" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text resource-bundle="main/resources/MessageBundle" key="rightLabelText"/>
         </properties>
       </component>
       <component id="f0aa0" class="javax.swing.JButton" binding="buttonClearAll">
         <constraints>
-          <grid row="2" column="5" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+          <grid row="1" column="5" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
           <text resource-bundle="main/resources/MessageBundle" key="clearAllButton"/>
         </properties>
       </component>
+      <component id="58320" class="javax.swing.JButton" binding="buttonCalculate">
+        <constraints>
+          <grid row="1" column="4" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text resource-bundle="main/resources/MessageBundle" key="calculateButton"/>
+        </properties>
+      </component>
       <component id="b8273" class="javax.swing.JButton" binding="buttonClearLastCharacter">
         <constraints>
-          <grid row="0" column="5" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+          <grid row="1" column="6" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
           <text resource-bundle="main/resources/MessageBundle" key="clearLastCharacterButton"/>
