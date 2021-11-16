@@ -39,19 +39,18 @@ public class MainWindow extends JFrame {
         this.pack();
         this.initialize();
 
-        button1.addActionListener(actionEvent -> controller.readInput(button1, controller.isOperatorSet() ? leftLabel: rightLabel));
-        button2.addActionListener(actionEvent -> controller.readInput(button2, controller.isOperatorSet() ? leftLabel: rightLabel));
-        button3.addActionListener(actionEvent -> controller.readInput(button3, controller.isOperatorSet() ? leftLabel: rightLabel));
-        button4.addActionListener(actionEvent -> controller.readInput(button4, controller.isOperatorSet() ? leftLabel: rightLabel));
-        button5.addActionListener(actionEvent -> controller.readInput(button5, controller.isOperatorSet() ? leftLabel: rightLabel));
-        button6.addActionListener(actionEvent -> controller.readInput(button6, controller.isOperatorSet() ? leftLabel: rightLabel));
-        button7.addActionListener(actionEvent -> controller.readInput(button7, controller.isOperatorSet() ? leftLabel: rightLabel));
-        button8.addActionListener(actionEvent -> controller.readInput(button8, controller.isOperatorSet() ? leftLabel: rightLabel));
-        button9.addActionListener(actionEvent -> controller.readInput(button9, controller.isOperatorSet() ? leftLabel: rightLabel));
-        button0.addActionListener(actionEvent -> controller.readInput(button0, controller.isOperatorSet() ? leftLabel: rightLabel));
-        buttonDecimalPoint.addActionListener(actionEvent -> controller.readInput(buttonDecimalPoint, controller.isOperatorSet() ? leftLabel: rightLabel));
+        button1.addActionListener(actionEvent -> controller.readInput(button1, readLabel()));
+        button2.addActionListener(actionEvent -> controller.readInput(button2, readLabel()));
+        button3.addActionListener(actionEvent -> controller.readInput(button3, readLabel()));
+        button4.addActionListener(actionEvent -> controller.readInput(button4, readLabel()));
+        button5.addActionListener(actionEvent -> controller.readInput(button5, readLabel()));
+        button6.addActionListener(actionEvent -> controller.readInput(button6, readLabel()));
+        button7.addActionListener(actionEvent -> controller.readInput(button7, readLabel()));
+        button8.addActionListener(actionEvent -> controller.readInput(button8, readLabel()));
+        button9.addActionListener(actionEvent -> controller.readInput(button9, readLabel()));
+        button0.addActionListener(actionEvent -> controller.readInput(button0, readLabel()));
+        buttonDecimalPoint.addActionListener(actionEvent -> controller.readInput(buttonDecimalPoint, readLabel()));
 
-        // TODO refactor processTheNumbers method
         buttonPlus.addActionListener(actionEvent -> controller.processTheOperator(buttonPlus, leftLabel, operatorLabel, rightLabel));
         buttonMinus.addActionListener(actionEvent -> controller.processTheOperator(buttonMinus, leftLabel, operatorLabel, rightLabel));
         buttonMultiply.addActionListener(actionEvent -> controller.processTheOperator(buttonMultiply, leftLabel, operatorLabel, rightLabel));
@@ -66,5 +65,9 @@ public class MainWindow extends JFrame {
 
     private void initialize(){
         controller = new Controller();
+    }
+
+    private JLabel readLabel(){
+        return controller.isOperatorSet() ? leftLabel: rightLabel;
     }
 }
