@@ -24,6 +24,7 @@ public class Calculator {
         this.operation = operation;
     }
 
+    // might want to use enum instead
     public void calculate(double num){
         switch (operation){
             case '+':

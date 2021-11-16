@@ -1,14 +1,15 @@
 package main.java.AwesomeCalculator.controllers;
 
-import main.java.AwesomeCalculator.Annotations.ControllerAnnotation;
+import main.java.AwesomeCalculator.controllers.interfaces.IController;
 import main.java.AwesomeCalculator.models.Calculator;
 import org.jetbrains.annotations.NotNull;
 
 import javax.swing.*;
-import java.lang.annotation.Annotation;
 import java.util.Objects;
 
-public class Controller implements ControllerAnnotation {
+public class Controller implements IController {
+
+    private static final String CLEARED_LABEL = "";
 
     private Calculator calc;
 
@@ -16,16 +17,16 @@ public class Controller implements ControllerAnnotation {
         this.initialize();
     }
 
-    public void readInput(@NotNull JButton b, @NotNull JLabel label){
+    public void readInput(@NotNull JButton button, @NotNull JLabel label){
         String text = label.getText();
-        label.setText(text + b.getText());
+        label.setText(text + button.getText());
     }
 
-    public void processTheOperator(@NotNull JButton b, @NotNull JLabel leftLabel, @NotNull JLabel operatorLabel, @NotNull JLabel rightLabel){
+    public void processTheOperator(@NotNull JButton button, @NotNull JLabel leftLabel, @NotNull JLabel operatorLabel, @NotNull JLabel rightLabel){
 
-        if(calc.getOperation() != 'x' && !Objects.equals(rightLabel.getText(), "")){
+        if(calc.getOperation() != 'x' && !Objects.equals(rightLabel.getText(), CLEARED_LABEL)){
             calc.calculate(Double.parseDouble(rightLabel.getText()));
-            rightLabel.setText("");
+            rightLabel.setText(CLEARED_LABEL);
             leftLabel.setText(String.format("%f",calc.getValue()));
         }
 
@@ -35,7 +36,7 @@ public class Controller implements ControllerAnnotation {
             );
         }
 
-        calc.setOperation(b.getText().toCharArray()[0]);
+        calc.setOperation(button.getText().toCharArray()[0]);
         operatorLabel.setText(String.format("%c",calc.getOperation()));
     }
 
@@ -43,15 +44,15 @@ public class Controller implements ControllerAnnotation {
         calc.calculate(Double.parseDouble(rightLabel.getText()));
         leftLabel.setText(String.format("%f", calc.getValue()));
         calc.setOperation('x');
-        operatorLabel.setText("");
-        rightLabel.setText("");
+        operatorLabel.setText(CLEARED_LABEL);
+        rightLabel.setText(CLEARED_LABEL);
     }
 
     public void clearAll(@NotNull JLabel leftLabel, @NotNull JLabel operatorLabel, @NotNull JLabel rightLabel){
         this.initialize();
-        rightLabel.setText("");
-        operatorLabel.setText("");
-        leftLabel.setText("");
+        rightLabel.setText(CLEARED_LABEL);
+        operatorLabel.setText(CLEARED_LABEL);
+        leftLabel.setText(CLEARED_LABEL);
     }
 
     public boolean isOperatorSet(){
@@ -60,10 +61,5 @@ public class Controller implements ControllerAnnotation {
 
     private void initialize(){
         calc = new Calculator(0, 'x');
-    }
-
-    @Override
-    public Class<? extends Annotation> annotationType() {
-        return null;
     }
 }
