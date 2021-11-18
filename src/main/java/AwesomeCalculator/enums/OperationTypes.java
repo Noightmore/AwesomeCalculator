@@ -9,3 +9,5 @@ public enum OperationTypes {
     SQUARED,
     UNSET
 }
+
+// TODO: add TO_THE_POWER (^), ROOT()

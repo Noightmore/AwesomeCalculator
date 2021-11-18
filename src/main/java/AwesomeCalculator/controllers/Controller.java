@@ -61,7 +61,8 @@ public class Controller implements IController {
                     Double.parseDouble(rightLabel.getText())
             );
             leftLabel.setText(
-                    String.format("%f",
+                    String.format(
+                            "%f",
                             calc.getValue())
             );
             calc.setOperation(OperationTypes.UNSET);
