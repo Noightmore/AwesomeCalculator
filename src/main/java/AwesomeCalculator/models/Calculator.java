@@ -1,15 +1,19 @@
 package main.java.AwesomeCalculator.models;
 
+import main.java.AwesomeCalculator.enums.OperationTypes;
+
 public class Calculator {
 
     private double value;
-    private char operation;
+    private OperationTypes operation;
 
-    public char getOperation() {
-        return operation;
-    }
-    public void setOperation(char operation){
+    public Calculator(double value, OperationTypes operation) {
+        this.value = value;
         this.operation = operation;
+    }
+
+    public OperationTypes getOperation() {
+        return operation;
     }
 
     public double getValue() {
@@ -19,24 +23,23 @@ public class Calculator {
         this.value = value;
     }
 
-    public Calculator(double value, char operation) {
-        this.value = value;
+    public void setOperation(OperationTypes operation){
         this.operation = operation;
     }
 
     // might want to use enum instead
     public void calculate(double num){
         switch (operation){
-            case '+':
+            case PLUS:
                 this.value += num;
                 break;
-            case '-':
+            case MINUS:
                 this.value -= num;
                 break;
-            case '*':
+            case MULTIPLY:
                 this.value *= num;
                 break;
-            case '/':
+            case DIVIDE:
                 this.value /= num;
                 break;
             default:

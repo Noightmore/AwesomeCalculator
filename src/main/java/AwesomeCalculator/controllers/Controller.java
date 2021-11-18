@@ -1,6 +1,8 @@
 package main.java.AwesomeCalculator.controllers;
 
+import main.java.AwesomeCalculator.controllers.converters.Converter;
 import main.java.AwesomeCalculator.controllers.interfaces.IController;
+import main.java.AwesomeCalculator.enums.OperationTypes;
 import main.java.AwesomeCalculator.models.Calculator;
 import org.jetbrains.annotations.NotNull;
 
@@ -10,7 +12,6 @@ import java.util.Objects;
 public class Controller implements IController {
 
     private static final String CLEARED = "";
-    private static final char UNSET_OPERATOR = 'x';
 
     private Calculator calc;
 
@@ -25,7 +26,7 @@ public class Controller implements IController {
 
     public void processTheOperator(@NotNull JButton button, @NotNull JLabel leftLabel, @NotNull JLabel operatorLabel, @NotNull JLabel rightLabel){
 
-        if(calc.getOperation() != UNSET_OPERATOR && !Objects.equals(rightLabel.getText(), CLEARED)){
+        if(calc.getOperation() != OperationTypes.UNSET && !Objects.equals(rightLabel.getText(), CLEARED)){
             calc.calculate(Double.parseDouble(rightLabel.getText()));
             rightLabel.setText(CLEARED);
             leftLabel.setText(String.format("%f",calc.getValue()));
@@ -37,8 +38,18 @@ public class Controller implements IController {
             );
         }
 
-        calc.setOperation(button.getText().toCharArray()[0]);
-        operatorLabel.setText(String.format("%c",calc.getOperation()));
+        calc.setOperation(
+                Converter.charToEnum(
+                        button
+                                .getText()
+                                .toCharArray()[0])
+        );
+        operatorLabel.setText(
+                String.format(
+                        "%c",
+                        Converter.enumToChar(
+                                calc.getOperation()))
+        );
     }
 
     public void showResults(@NotNull JLabel leftLabel, @NotNull JLabel operatorLabel, @NotNull JLabel rightLabel){
@@ -46,9 +57,14 @@ public class Controller implements IController {
                 && !Objects.equals(operatorLabel.getText(), CLEARED)
                 && !Objects.equals(rightLabel.getText(), CLEARED)){
 
-            calc.calculate(Double.parseDouble(rightLabel.getText()));
-            leftLabel.setText(String.format("%f", calc.getValue()));
-            calc.setOperation(UNSET_OPERATOR);
+            calc.calculate(
+                    Double.parseDouble(rightLabel.getText())
+            );
+            leftLabel.setText(
+                    String.format("%f",
+                            calc.getValue())
+            );
+            calc.setOperation(OperationTypes.UNSET);
             operatorLabel.setText(CLEARED);
             rightLabel.setText(CLEARED);
         }
@@ -89,10 +105,10 @@ public class Controller implements IController {
     }
 
     public boolean isOperatorSet(){
-        return calc.getOperation() == UNSET_OPERATOR;
+        return calc.getOperation() == OperationTypes.UNSET;
     }
 
     private void initialize(){
-        calc = new Calculator(0, UNSET_OPERATOR);
+        calc = new Calculator(0, OperationTypes.UNSET);
     }
 }
